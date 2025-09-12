@@ -1,0 +1,6 @@
+Terraform - https://developer.hashicorp.com/terraform/install
+Visual Studio Code - https://code.visualstudio.com/
+AzureCLI - https://learn.microsoft.com/en-us/cli/azure/install-azure-cli-windows?view=azure-cli-lates
+
+Visual Studio Code extensions
+- HashiCorp HCL
