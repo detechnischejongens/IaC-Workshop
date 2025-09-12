@@ -1,0 +1,28 @@
+# Important Terraform Commands
+
+# INITIALIZE
+terraform init                        # Initializes Terraform in the current directory
+
+# PLANNING (WHAT-IF, 4 EYES PRINCIPLE)
+terraform plan -out="dtj.tfplan"      # Creates a plan file (like a what-if)
+terraform show tfplan                 # (Optional) Shows the plan details
+
+# APPLY CONFIGURATION
+terraform apply dtj.tfplan            # Applies the saved plan file
+terraform apply                       # Applies directly without a saved plan (less safe)
+
+# DESTROY RESOURCES
+terraform destroy                     # Destroys resources managed by Terraform
+
+# STATE FILE
+A Terraform state file (terraform.tfstate) is where Terraform keeps track of the real-world resources it manages.
+It acts as a "source of truth" so Terraform knows what exists and what changes are needed.
+
+# STATE FILE TYPES
+In our workshop we'll use a local terraform.tfstate file.
+But in production environments a remote state (e.g., Azure Storage, S3, Terraform Cloud) is recommended.
+More info: https://developer.hashicorp.com/terraform/language/state/remote-state-data
+
+# STATE WARNING
+The state file can contain sensitive data (like passwords or secrets).
+Always secure this file (e.g., don’t commit it to Git).

@@ -11,3 +11,5 @@ Output: Retrieving tenants and subscriptions for the selection...
 Command list subscriptions: az account list -o table
 
 Command select subscription: az account set --subscription "<subscription-id-of-name>"
+
+Command set subscription id for terraform: $env:ARM_SUBSCRIPTION_ID="xxxx-xxxx-xxx-xxxx-x"
