@@ -1,0 +1,13 @@
+# Open terminal in VSCode - Terminal --> New Terminal
+
+# 1. Login using AzureCLI with an account which is Owner or contributor of an azure subscription
+
+Command:  az login
+
+Output: Retrieving tenants and subscriptions for the selection...
+
+# 2. Select the subscription where you want to deploy stuff or do it with AzureCLI
+
+Command list subscriptions: az account list -o table
+
+Command select subscription: az account set --subscription "<subscription-id-of-name>"
