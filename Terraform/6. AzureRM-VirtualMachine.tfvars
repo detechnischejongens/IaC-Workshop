@@ -1,2 +1,2 @@
-vmname = "DTJ-VM01"
+vmname = "DTJ-VM"
 VMadmin = "lcladmin"
