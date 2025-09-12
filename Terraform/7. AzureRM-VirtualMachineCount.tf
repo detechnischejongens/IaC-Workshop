@@ -2,13 +2,13 @@
 
 locals {
   vm_count = 3
-  vm_sku = "Standard_D2s_v5"
+  vm_sku   = "Standard_D2s_v5"
 }
 
 # Documentation - https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/windows_virtual_machine
 
 resource "azurerm_network_interface" "dtj-winvmcount-nic" {
-  count              = local.vm_count
+  count               = local.vm_count
   name                = "${var.vmname}${count.index + 1}-nic" #interpolation with count
   location            = azurerm_resource_group.dtj-resource-group.location
   resource_group_name = azurerm_resource_group.dtj-resource-group.name
@@ -28,10 +28,10 @@ resource "azurerm_windows_virtual_machine" "dtj-winvmcount" {
   size                = "Standard_D2ds_v5"
   admin_username      = var.VMadmin
   admin_password      = var.VMpassword
-  vtpm_enabled          = true
-  secure_boot_enabled   = true
-  license_type          = "Windows_Client"
-  provision_vm_agent    = true
+  vtpm_enabled        = true
+  secure_boot_enabled = true
+  license_type        = "Windows_Client"
+  provision_vm_agent  = true
   network_interface_ids = [
     azurerm_network_interface.dtj-winvmcount-nic[count.index].id, #count
   ]
