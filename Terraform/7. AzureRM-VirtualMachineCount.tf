@@ -28,6 +28,10 @@ resource "azurerm_windows_virtual_machine" "dtj-winvmcount" {
   size                = "Standard_D2ds_v5"
   admin_username      = var.VMadmin
   admin_password      = var.VMpassword
+  vtpm_enabled          = true
+  secure_boot_enabled   = true
+  license_type          = "Windows_Client"
+  provision_vm_agent    = true
   network_interface_ids = [
     azurerm_network_interface.dtj-winvmcount-nic[count.index].id, #count
   ]
