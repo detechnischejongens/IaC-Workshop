@@ -4,3 +4,5 @@ AzureCLI - https://learn.microsoft.com/en-us/cli/azure/install-azure-cli-windows
 
 Visual Studio Code extensions
 - HashiCorp HCL
+
+WARNING: This is a basic course. Never ever save Passwords or Azure subscription IDs on public repo's ever!
