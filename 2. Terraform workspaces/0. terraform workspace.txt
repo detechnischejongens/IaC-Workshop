@@ -1,0 +1,7 @@
+Command: terraform workspace new production 
+
+Command: terraform workspace list
+
+Command: terraform workspace select development
+
+Command: terraform plan -out="prod-pbo.tfplan" -var-file="variables.tfvars"

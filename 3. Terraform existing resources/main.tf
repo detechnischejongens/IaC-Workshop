@@ -1,8 +1,3 @@
-# Providers can be found here: https://registry.terraform.io/browse/providers
-
-# In our examples we're using AzureRM provider: https://registry.terraform.io/providers/hashicorp/azurerm/latest
-
-# Specifying the provider and version - more info https://developer.hashicorp.com/terraform/language/block/provider
 terraform {
   required_providers {
     azurerm = {
@@ -14,6 +9,6 @@ terraform {
 
 provider "azurerm" {
   features {} # Required block for the AzureRM provider
-  
+
   #subscription_id = "your-subscription-id" # Mandatory if you not specified the environment var ARM_SUBSCRIPTION_ID
 }

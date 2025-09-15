@@ -13,3 +13,5 @@ Command list subscriptions: az account list -o table
 Command select subscription: az account set --subscription "<subscription-id-of-name>"
 
 Command set subscription id for terraform: $env:ARM_SUBSCRIPTION_ID="xxxx-xxxx-xxx-xxxx-x"
+
+Command to plan: terraform plan -out="pbo.tfplan" -var-file="6. AzureRM-VirtualMachine.tfvars"
