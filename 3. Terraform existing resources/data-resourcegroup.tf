@@ -2,7 +2,3 @@
 data "azurerm_resource_group" "dtj-existing-rg" {
   name = "rg-data-IAC-Workshop" # Name of the existing resource group
 }
-
-output "rg-id" {
-  value = data.azurerm_resource_group.dtj-existing-rg.id
-}
