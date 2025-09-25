@@ -100,6 +100,8 @@ build {
         ]
     }
 
+    provisioner "windows-restart" {}
+
     provisioner "powershell" {
         elevated_password = ""
         elevated_user     = "SYSTEM"
@@ -110,6 +112,12 @@ build {
     # provisioner "ansible" {
     #   playbook_file = "./playbook.yml"
     # }
+
+    #Copy Shared BIS-F Config to VM
+    provisioner "file" {
+        destination = "C:/Program Files (x86)/Base Image Script Framework (BIS-F)"
+        source      = "${var.buildsourcesdir}/Image Factory/Packer-Install/5000-SealingLayer/HVC/BIS-F_SharedConfig/"
+    }
 
     post-processor "manifest" {}
 }
