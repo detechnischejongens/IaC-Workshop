@@ -81,7 +81,7 @@ source "azure-arm" "PackerBuilder" {
         resource_group       = "PackerDemo"
         gallery_name         = "ComputeGallery"
         image_name           = "TrustedLaunchImage"
-        image_version        = "2025.01.01"
+        image_version        = "2025.09.25"
         replication_regions  = ["westeurope"]
         storage_account_type = "Standard_LRS"
     }
@@ -126,7 +126,7 @@ build {
     # #Copy Shared BIS-F Config to VM
     # provisioner "file" {
     #     destination = "C:/Program Files (x86)/Base Image Script Framework (BIS-F)"
-    #     source      = "${var.buildsourcesdir}/Image Factory/Packer-Install/5000-SealingLayer/HVC/BIS-F_SharedConfig/"
+    #     source      = "${var.buildsourcesdir}/Image Factory/Packer-Install/5000-SealingLayer/aaa/BIS-F_SharedConfig/"
     # }
 
     post-processor "manifest" {}
