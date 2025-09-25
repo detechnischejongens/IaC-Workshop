@@ -37,7 +37,10 @@ override.tf.json
 terraform.rc
 
 terraform.exe
+packer.exe
 
 .terraform.lock.hcl
 
 *.tfplan
+
+dontcommit.pkrvars.hcl

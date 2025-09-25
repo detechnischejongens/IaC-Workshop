@@ -1,0 +1,1 @@
+packer.exe build -var-file="dontcommit.pkrvars.hcl"
