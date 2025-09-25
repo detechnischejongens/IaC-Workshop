@@ -107,5 +107,9 @@ build {
         script            = "C:\GitHub\IaC-Workshop\5. Packer Basics\generalize.ps1"
     }
 
+    # provisioner "ansible" {
+    #   playbook_file = "./playbook.yml"
+    # }
+
     post-processor "manifest" {}
 }
