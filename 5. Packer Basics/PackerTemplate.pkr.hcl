@@ -75,15 +75,12 @@ source "azure-arm" "PackerBuilder" {
     secure_boot_enabled                    = true
     vtpm_enabled                           = true
 
-    #Managed disk settings of builder VM
-    keep_os_disk = true
-
     #ARM SIG of the customer
     shared_image_gallery_destination {
         subscription         = var.subscription_id
         resource_group       = "PackerDemo"
         gallery_name         = "ComputeGallery"
-        image_name           = "Image"
+        image_name           = "TrustedLaunchImage"
         image_version        = "2025.01.01"
         replication_regions  = ["westeurope"]
         storage_account_type = "Standard_LRS"
@@ -97,6 +94,19 @@ build {
     provisioner "powershell" {
         inline = [
             "Write-Host 'Hello, World!'"
+        ]
+    }
+
+    provisioner "powershell" {
+        elevated_password = ""
+        elevated_user     = "SYSTEM"
+        max_retries       =  "2"
+        script            = "C:/GitHub/IaC-Workshop/5. Packer Basics/Install-Chocolatey.ps1"
+    }
+
+    provisioner "powershell" {
+        inline = [
+            "choco install 7zip -y",
         ]
     }
 
