@@ -52,11 +52,11 @@ source "azure-arm" "PackerBuilder" {
     #ARM Builder Temp resources information
     build_resource_group_name              = "PackerDemo"
 
-    #ARM Builder Network connection
-    virtual_network_resource_group_name    = "PackerDemo"
-    virtual_network_name                   = "PackerVNET"
-    virtual_network_subnet_name            = "default"
-    private_virtual_network_with_public_ip = "false"
+    # #ARM Builder Network connection
+    # virtual_network_resource_group_name    = "PackerDemo"
+    # virtual_network_name                   = "PackerVNET"
+    # virtual_network_subnet_name            = "default"
+    # private_virtual_network_with_public_ip = "false"
 
     # Packer Builder Communication Info
     communicator                           = "winrm"
@@ -106,18 +106,18 @@ build {
         elevated_password = ""
         elevated_user     = "SYSTEM"
         max_retries       =  "2"
-        script            = "C:\GitHub\IaC-Workshop\5. Packer Basics\generalize.ps1"
+        script            = "C:/GitHub/IaC-Workshop/5. Packer Basics/generalize.ps1"
     }
 
     # provisioner "ansible" {
     #   playbook_file = "./playbook.yml"
     # }
 
-    #Copy Shared BIS-F Config to VM
-    provisioner "file" {
-        destination = "C:/Program Files (x86)/Base Image Script Framework (BIS-F)"
-        source      = "${var.buildsourcesdir}/Image Factory/Packer-Install/5000-SealingLayer/HVC/BIS-F_SharedConfig/"
-    }
+    # #Copy Shared BIS-F Config to VM
+    # provisioner "file" {
+    #     destination = "C:/Program Files (x86)/Base Image Script Framework (BIS-F)"
+    #     source      = "${var.buildsourcesdir}/Image Factory/Packer-Install/5000-SealingLayer/HVC/BIS-F_SharedConfig/"
+    # }
 
     post-processor "manifest" {}
 }
